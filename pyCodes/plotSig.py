@@ -33,17 +33,21 @@ def main():
     #sigma values of NLSY
     #NLSY = returnHist("../aveSigNYSL.csv", 6)
     #sigma values of BLSY
-    BLSY = returnHist("../data/aveSigBLSy.csv", 4) 
+    BLSY = returnHist("../data/exactBLSy.csv", 5) 
 
     #compared NLSY - 371 sources
     NLSY = returnHist('../data/aveSigNLSy.csv',6)
 
-    plot.hist(NLSY, bins=50, alpha=0.5, color='r', density=True, stacked=True , label='NLSY')
-    plot.hist(BLSY, bins=50, alpha=0.5, color='b', density=True, stacked=True , label='BLSY')
+    # plot.hist(NLSY, bins=50, alpha=0.5, color='r', density=True, stacked=True , label='NLSY')
+    # plot.hist(BLSY, bins=50, alpha=0.5, color='b', density=True, stacked=True , label='BLSY')
 
-    plot.gca().set(title='Frequency Histogram', ylabel='Normalized Frequency' , xlabel = "log(Sigma)")
-    plot.legend()
-    #plot.show()
-    plot.savefig("../sigComp371.png")
+    # plot.gca().set(title='Frequency Histogram', ylabel='Normalized Frequency' , xlabel = "log(Sigma)")
+    # plot.legend()
+    # #plot.show()
+    # plot.savefig("../sigComp371.png")
+    nlMed = np.median(NLSY)
+    print(nlMed)
+    blMed = np.median(BLSY)
+    print(blMed)
 
-#main()
+main()
